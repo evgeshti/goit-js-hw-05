@@ -4,11 +4,38 @@
 // складом товаров.При вызове будет получать один аргумент - начальный
 // массив товаров, и записывать его в свойство items.
 
-Добавь методы класса:
+// Добавь методы класса:
 
-getItems() - возвращает массив текущих товаров
-addItem(item) - получает новый товар и добавляет его к текущим
-removeItem(item) - получет товар и, если он есть, удаляет его из текущих
+// getItems() - возвращает массив текущих товаров
+// addItem(item) - получает новый товар и добавляет его к текущим
+// removeItem(item) - получет товар и, если он есть, удаляет его из текущих
+
+class Storage {
+  constructor(items) {
+    this.items = items;
+  }
+
+  getItems() {
+    return this.items;
+  }
+
+  addItem(item) {
+    if (items.includes(item)) {
+      console.log(`нельзя иметь несколько единиц ${item}`);
+    } else {
+      this.items.push(item);
+    }
+  }
+
+  removeItem(item) {
+    this.items = this.items.filter(function (element) {
+      if (element !== item) {
+        return element;
+      }
+    });
+  }
+}
+
 const storage = new Storage([
   'Нанитоиды',
   'Пролонгер',
